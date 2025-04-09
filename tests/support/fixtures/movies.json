@@ -1,0 +1,83 @@
+{
+    "create": {
+      "title": "Guerra Mundial Z",
+      "overview": "O ex-agente da ONU Gerry Lane é chamado para investigar a origem de uma pandemia global que transforma os seres humanos em mortos-vivos. A busca leva Lane a várias partes do mundo enquanto ele tenta encontrar uma forma de impedir a propagação do vírus, antes que a humanidade seja destruída.",
+      "company": "Paramount Pictures",
+      "release_year": 2013,
+      "featured": false,
+      "cover": "/imagens/guerra_mundial_z.png"
+    },
+    "exterminio": {
+      "title": "Extermínio",
+      "overview": "Após um experimento científico dar errado, um vírus altamente contagioso começa a transformar as pessoas em zumbis violentos. Um grupo de sobreviventes tenta escapar da cidade infestada, enquanto o caos toma conta do mundo.",
+      "company": "Fox Searchlight Pictures",
+      "release_year": 2002,
+      "featured": false,
+      "cover": "/imagens/exterminio.png"
+    },
+    "o_amanha_nao_esta_garantido": {
+      "title": "O Amanhã Não Está Garantido",
+      "overview": "O filme segue um grupo de pessoas que tentam sobreviver a um apocalipse zumbi. Enquanto lutam pela sobrevivência, eles precisam enfrentar tanto os mortos-vivos quanto outros humanos que são mais perigosos do que qualquer monstro.",
+      "company": "Lionsgate",
+      "release_year": 2004,
+      "featured": false,
+      "cover": "/imagens/o_amanha_nao_esta_garantido.png"
+    },
+    "a_noite_dos_mortos_vivos": {
+      "title": "A Noite dos Mortos-Vivos",
+      "overview": "Um grupo de pessoas se refugia em uma casa isolada enquanto zumbis, criados por uma estranha radiação, começam a tomar conta do mundo. Eles devem enfrentar não apenas os mortos, mas também as tensões internas que surgem enquanto tentam sobreviver.",
+      "company": "Romero, George A.",
+      "release_year": 1968,
+      "featured": false,
+      "cover": "/imagens/a_noite_dos_mortos_vivos.png"
+    },
+    "madrugada_dos_mortos": {
+      "title": "Madrugada dos Mortos",
+      "overview": "Após um surto de zumbis tomar conta do mundo, um grupo de pessoas se refugia em um shopping center. Eles devem lutar para sobreviver e se proteger enquanto enfrentam os mortos e as adversidades internas do grupo.",
+      "company": "Universal Pictures",
+      "release_year": 2004,
+      "featured": false,
+      "cover": "/imagens/madrugada_dos_mortos.png"
+    },
+    "zumbilandia": {
+      "title": "Zumbilândia",
+      "overview": "Em um mundo pós-apocalíptico dominado por zumbis, um grupo de sobreviventes improváveis tenta se proteger e encontrar um local seguro, enquanto enfrentam criaturas e aprendem regras para sobreviver.",
+      "company": "Sony Pictures",
+      "release_year": 2009,
+      "featured": true,
+      "cover": "/imagens/zumbilandia.png"
+    },
+    "o_hospedeiro": {
+      "title": "O Hospedeiro",
+      "overview": "Após uma criatura mutante surgir no Rio Han, um monstro zumbi ameaça destruir a cidade. Uma família precisa lutar pela sobrevivência, enfrentando não apenas o monstro, mas também as consequências de uma sociedade em colapso.",
+      "company": "CJ Entertainment",
+      "release_year": 2006,
+      "featured": false,
+      "cover": "/imagens/o_hospedeiro.png"
+    },
+    "dead_snow": {
+      "title": "Dead Snow",
+      "overview": "Um grupo de estudantes vai para uma cabana nas montanhas e acaba enfrentando um exército de zumbis nazistas que foram ressuscitados. Eles precisam lutar para sobreviver e escapar das garras dessas criaturas mortais.",
+      "company": "Horisont Film AB",
+      "release_year": 2009,
+      "featured": false,
+      "cover": "/imagens/dead_snow.png"
+    },
+    "reino": {
+      "title": "Reino",
+      "overview": "Em um reino medieval, uma misteriosa praga transforma as pessoas em mortos-vivos, ameaçando destruir o reino. O príncipe e seus aliados devem lutar para encontrar a cura e salvar seu povo.",
+      "company": "Next Entertainment World",
+      "release_year": 2018,
+      "featured": false,
+      "cover": "/imagens/reino.png"
+    },
+    "o_retorno_dos_mortos_vivos": {
+      "title": "O Retorno dos Mortos-Vivos",
+      "overview": "Após um acidente, um gás estranho faz com que os mortos se reanimem e se tornem zumbis sedentos por cérebros. Um grupo de jovens tenta escapar dessa ameaça enquanto as ruas da cidade se tornam um caos.",
+      "company": "Orion Pictures",
+      "release_year": 1985,
+      "featured": false,
+      "cover": "/imagens/o_retorno_dos_mortos_vivos.png"
+    }
+  }
+  
