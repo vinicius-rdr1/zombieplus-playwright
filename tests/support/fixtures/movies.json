@@ -5,7 +5,7 @@
       "company": "Paramount Pictures",
       "release_year": 2013,
       "featured": false,
-      "cover": "/imagens/guerra_mundial_z.png"
+      "cover": "/covers/movies/wwz.png"
     },
     "exterminio": {
       "title": "Extermínio",
@@ -45,7 +45,7 @@
       "company": "Sony Pictures",
       "release_year": 2009,
       "featured": true,
-      "cover": "/imagens/zumbilandia.png"
+      "cover": "/covers/movies/zumbilandia.jpg"
     },
     "o_hospedeiro": {
       "title": "O Hospedeiro",
@@ -55,13 +55,13 @@
       "featured": false,
       "cover": "/imagens/o_hospedeiro.png"
     },
-    "dead_snow": {
+    "duplicate": {
       "title": "Dead Snow",
       "overview": "Um grupo de estudantes vai para uma cabana nas montanhas e acaba enfrentando um exército de zumbis nazistas que foram ressuscitados. Eles precisam lutar para sobreviver e escapar das garras dessas criaturas mortais.",
-      "company": "Horisont Film AB",
+      "company": "Amazon Studios",
       "release_year": 2009,
       "featured": false,
-      "cover": "/imagens/dead_snow.png"
+      "cover": "/covers/movies/dead-snow.jpg"
     },
     "reino": {
       "title": "Reino",

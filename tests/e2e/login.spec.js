@@ -5,7 +5,7 @@ test('Deve logar como administrador', async ({page}) => {
 
     await page.login.visit()
     await page.login.submit('admin@zombieplus.com', 'pwd123')
-    await page.movies.isLoggedIn()
+    await page.login.isLoggedIn('Admin')
 
 })
 
@@ -14,9 +14,9 @@ test('Não Deve logar com Senha Incorreta', async ({page}) => {
 
     await page.login.visit()
     await page.login.submit('admin@zombieplus.com', '123adm')
-    const message = 'Oops!Ocorreu um erro ao tentar efetuar o login. Por favor, verifique suas credenciais e tente novamente.'
+    const message = 'Ocorreu um erro ao tentar efetuar o login. Por favor, verifique suas credenciais e tente novamente.'
 
-    await page.toast.containText(message)
+    await page.popup.haveText(message)
 
 
 })

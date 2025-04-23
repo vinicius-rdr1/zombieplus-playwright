@@ -6,20 +6,20 @@ import { faker } from '@faker-js/faker';
 
 test('Cadastrar o Lead na fila de espera', async ({ page }) => {
  
-  const message = 'Agradecemos por compartilhar seus dados conosco. Em breve, nossa equipe entrará em contato!'
+  const message = 'Agradecemos por compartilhar seus dados conosco. Em breve, nossa equipe entrará em contato.'
   const leadName = faker.person.fullName()
   const leadEmail = faker.internet.email()
    
-  await page.landing.visit()
-  await page.landing.openLeadModal()
-  await page.landing.submitLeadModal(leadName, leadEmail)
-  await page.toast.containText(message)
+  await page.leads.visit()
+  await page.leads.openLeadModal()
+  await page.leads.submitLeadModal(leadName, leadEmail)
+  await page.popup.haveText(message)
 
 });
 
 test('Não deve cadastrar quando o email ja existe', async ({ page, request }) => {
  
-  const message = 'O endereço de e-mail fornecido já está registrado em nossa fila de espera.'
+  const message = 'Verificamos que o endereço de e-mail fornecido já consta em nossa lista de espera. Isso significa que você está um passo mais perto de aproveitar nossos serviços.'
   const leadName = faker.person.fullName()
   const leadEmail = faker.internet.email()
 
@@ -32,30 +32,30 @@ test('Não deve cadastrar quando o email ja existe', async ({ page, request }) =
 
   expect(newLead.ok()).toBeTruthy
   
-  await page.landing.visit()
-  await page.landing.openLeadModal()
-  await page.landing.submitLeadModal(leadName, leadEmail)
+  await page.leads.visit()
+  await page.leads.openLeadModal()
+  await page.leads.submitLeadModal(leadName, leadEmail)
   
-  await page.toast.containText(message)
+  await page.popup.haveText(message)
 
 });
 
 
 test('Nao deve cadastrar com email incorreto', async ({ page }) => {
 
-  await page.landing.visit()
-  await page.landing.openLeadModal()
-  await page.landing.submitLeadModal('Vinicius Rodrigues Souza', 'vincius.rdr.gmail.com')    
-  await page.landing.alertText('Email incorreto')
+  await page.leads.visit()
+  await page.leads.openLeadModal()
+  await page.leads.submitLeadModal('Vinicius Rodrigues Souza', 'vincius.rdr.gmail.com')    
+  await page.leads.alertText('Email incorreto')
 
 });
 
 test('Nao deve cadastrar quando o nome não é preenchido', async ({ page }) => {
 
-  page.landing.visit()
-  page.landing.openLeadModal()
-  page.landing.submitLeadModal('', 'vinicius.rd1@gmail.com')  
-  await page.landing.alertText('Campo obrigatório')
+  page.leads.visit()
+  page.leads.openLeadModal()
+  page.leads.submitLeadModal('', 'vinicius.rd1@gmail.com')  
+  await page.leads.alertText('Campo obrigatório')
 
 });
 
@@ -63,20 +63,20 @@ test('Nao deve cadastrar quando o nome não é preenchido', async ({ page }) => 
 
 test('Nao deve cadastrar quando o email não é preenchido', async ({ page }) => {
 
-  await page.landing.visit()
-  await page.landing.openLeadModal()
-  await page.landing.submitLeadModal('Vinicisu R. Souza', '')
-  await page.landing.alertText('Campo obrigatório')
+  await page.leads.visit()
+  await page.leads.openLeadModal()
+  await page.leads.submitLeadModal('Vinicisu R. Souza', '')
+  await page.leads.alertText('Campo obrigatório')
 
 });
 
 
 test('Nao deve cadastrar quando nenhum campo é preenchido', async ({ page }) => {
  
-  await page.landing.visit()
-  await page.landing.openLeadModal()
-  await page.landing.submitLeadModal('','')  
-  await page.landing.alertText(['Campo obrigatório', 'Campo obrigatório'])
+  await page.leads.visit()
+  await page.leads.openLeadModal()
+  await page.leads.submitLeadModal('','')  
+  await page.leads.alertText(['Campo obrigatório', 'Campo obrigatório'])
 
 });
 

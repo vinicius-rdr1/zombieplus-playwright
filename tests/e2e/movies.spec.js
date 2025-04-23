@@ -4,31 +4,48 @@ const data = require('../support/fixtures/movies.json')
 import { executeSQL } from '../support/database';
 
 
-test('Deve poder cadastrar um novo filme', async ({ page }) => {
+test('Deve cadastrar um novo filme', async ({ page }) => {
 
     const movie = data.zumbilandia
-    const message = 'Cadastro realizado com sucesso!'
+    const message = `O filme '${movie.title}' foi adicionado ao catálogo.`
 
     await executeSQL(`DELETE FROM public.movies WHERE title = '${movie.title}';`)
 
-    await page.login.visit()
-    await page.login.submit('admin@zombieplus.com', 'pwd123')
-    await page.movies.isLoggedIn()
-    await page.movies.create(movie.title, movie.overview, movie.company, movie.release_year)
-    await page.toast.containText(message)
-    
+    await page.login.do('admin@zombieplus.com', 'pwd123', 'Admin')
+    await page.movies.create(movie)
+    await page.popup.haveText(message)
+
 })
 
-test('Não pode Cadastrar um filme repetido', async ({ page }) => {
+test('Não pode Cadastrar um filme repetido', async ({ page, request}) => {
 
     // É necessário estar logado
-    const movie = data.zumbilandia
-    const message = 'Este conteúdo já encontra-se cadastrado no catálogo'
+    const movie = data.duplicate
+    const message = `O título '${movie.title}' já consta em nosso catálogo. Por favor, verifique se há necessidade de atualizações ou correções para este item.`
 
-    await page.login.visit()
-    await page.login.submit('admin@zombieplus.com', 'pwd123')
-    await page.movies.isLoggedIn()    
-    await page.movies.create(movie.title, movie.overview, movie.company, movie.release_year)    
-    await page.toast.containText(message)   
+    await executeSQL(`DELETE FROM public.movies WHERE title = '${movie.title}';`)
 
+    await request.api.postMovie(movie)
+
+
+    await page.login.do('admin@zombieplus.com', 'pwd123', 'Admin')    
+    await page.movies.create(movie)    
+    await page.popup.haveText(message)   
+
+})
+
+test('Não deve cadastrar quando os campos obrigatórios não são preenchidos', async ({ page }) => {
+    
+    await page.login.do('admin@zombieplus.com', 'pwd123', 'Admin')
+    await page.movies.goForm()
+    await page.movies.submit()
+
+    await page.movies.alertText([
+        'Campo obrigatório',
+        'Campo obrigatório',
+        'Campo obrigatório',
+        'Campo obrigatório'
+
+
+    ])
 })
